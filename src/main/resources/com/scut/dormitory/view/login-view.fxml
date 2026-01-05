@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.scut.dormitory.controller.LoginController">
+
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label text="学生宿舍管理系统">
+        <font>
+            <Font name="System Bold" size="24.0"/>
+        </font>
+    </Label>
+
+    <Label text="Dormitory Management System" style="-fx-text-fill: #666666;"/>
+
+    <VBox spacing="15.0" maxWidth="300.0">
+        <children>
+            <TextField fx:id="usernameField" promptText="请输入管理员账号" />
+
+            <PasswordField fx:id="passwordField" promptText="请输入密码" />
+
+            <Button text="立即登录" maxWidth="Infinity" defaultButton="true"
+                    style="-fx-background-color: #0d6efd; -fx-text-fill: white;"
+                    onAction="#onLoginButtonClick"/>
+        </children>
+    </VBox>
+
+    <Label text="© 2026 South China University of Technology" style="-fx-font-size: 10px; -fx-text-fill: #999999;">
+        <VBox.margin>
+            <Insets top="30.0"/>
+        </VBox.margin>
+    </Label>
+</VBox>
