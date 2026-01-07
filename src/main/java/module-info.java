@@ -8,9 +8,9 @@ module com.scut.dormitory {
     // 1. 允许 JavaFX 访问主程序包 (MainApp 在这里)
     opens com.scut.dormitory to javafx.fxml;
 
-    // 2. 【关键修复】允许 JavaFX 访问控制器包 (LoginController 在这里)
-    // 必须加上这一行，否则 FXML 加载器无法创建 Controller 实例
+    // 允许 JavaFX 访问控制器包 (LoginController 在这里)
     opens com.scut.dormitory.controller to javafx.fxml;
+    opens com.scut.dormitory.model to javafx.base;
 
     exports com.scut.dormitory;
 

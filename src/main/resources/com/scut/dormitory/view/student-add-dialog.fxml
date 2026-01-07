@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.scut.dormitory.controller.StudentAddController"
+      prefWidth="400.0">
+
+    <padding><Insets bottom="20" left="20" right="20" top="20"/></padding>
+
+    <Label text="新增学生信息">
+        <font><Font name="System Bold" size="18.0"/></font>
+    </Label>
+
+    <GridPane hgap="10" vgap="15">
+        <Label text="学号：" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="noField" promptText="请输入学号" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="姓名：" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="nameField" promptText="请输入姓名" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="性别：" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="genderCombo" promptText="请选择" prefWidth="200" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="宿舍楼：" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="buildingCombo" promptText="选择楼宇" prefWidth="200" onAction="#onBuildingSelect" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="房间号：" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="roomCombo" promptText="先选楼宇" prefWidth="200" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="取消" onAction="#onCancel"/>
+        <Button text="保存" style="-fx-background-color: #0d6efd; -fx-text-fill: white;" onAction="#onSave"/>
+    </HBox>
+
+</VBox>

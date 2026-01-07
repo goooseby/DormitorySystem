@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.25" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.scut.dormitory.controller.DormController">
+
+    <VBox spacing="10.0">
+        <padding><Insets bottom="10" left="10" right="10" top="10"/></padding>
+        <Label text="宿舍楼列表">
+            <font><Font name="System Bold" size="16.0"/></font>
+        </Label>
+        <ListView fx:id="buildingList" VBox.vgrow="ALWAYS"/>
+    </VBox>
+
+    <VBox spacing="10.0">
+        <padding><Insets bottom="10" left="10" right="10" top="10"/></padding>
+
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label fx:id="titleLabel" text="请选择左侧楼宇">
+                <font><Font name="System Bold" size="18.0"/></font>
+            </Label>
+            <HBox HBox.hgrow="ALWAYS"/>
+            <Label text="🟩 有空位" style="-fx-text-fill: green; -fx-font-weight: bold;"/>
+            <Label text="🟥 已满员" style="-fx-text-fill: red; -fx-font-weight: bold;"/>
+        </HBox>
+
+        <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+            <TilePane fx:id="roomPane" hgap="15" vgap="15" prefColumns="5" tileAlignment="TOP_LEFT">
+                <padding><Insets top="10" left="10" bottom="10" right="10"/></padding>
+            </TilePane>
+        </ScrollPane>
+    </VBox>
+
+</SplitPane>
